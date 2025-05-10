@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Citas</title>
+    <meta content="width=device-width, initial-scale=1.0, shrink-to-fit=no" name="viewport" />
+    <link rel="stylesheet" href="/assets/bootstrap.min.css" />
+    <link rel="stylesheet" href="/assets/plugins.min.css" />
+    <link rel="stylesheet" href="/assets/kaiadmin.min.css" />
+    <link rel="stylesheet" href="/assets/demo.css" />
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="main-panel">
+        <div class="container">
+          <div class="page-inner">
+            <div class="row">
+              <div class="col-md-12">
+                <div class="card" style="max-width: 900px; width: 100%;">
+                  <div class="card-header">
+                    <h4 class="card-title">Citas</h4>
+                    <a href="/citas/nuevo" class="btn btn-primary float-right">Agregar Cita</a>
+                  </div>
+                  <div class="card-body">
+                    <div class="table-responsive">
+                      <table id="basic-datatables" class="display table table-striped table-hover">
+                        <thead>
+                          <tr>
+                            <th>Id Cita</th>
+                            <th>Id Paciente</th>
+                            <th>Fecha</th>
+                            <th>Motivo</th>
+                            <th>Acciones</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr th:each="cita : ${citas}">
+                            <td th:text="${cita.id}"></td>
+                            <td th:text="${cita.idPaciente}"></td>
+                            <td th:text="${#temporals.format(cita.fecha, 'yyyy-MM-dd HH:mm')}"></td>
+                            <td th:text="${cita.motivo}"></td>
+                            <td>
+                              <a th:href="@{/citas/editar/{id}(id=${cita.id})}" class="btn btn-warning btn-sm">Editar</a>
+                              <a th:href="@{/citas/eliminar/{id}(id=${cita.id})}" class="btn btn-danger btn-sm" onclick="return confirm('¿Estás seguro de eliminar esta cita?')">Eliminar</a>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
