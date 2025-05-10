@@ -48,7 +48,7 @@ public class CitasController {
     public String formularioEditarCita(@PathVariable int id, Model model) {
         Citas cita = citasService.obtenerCitaPorId(id);
         model.addAttribute("cita", cita);
-        return "/citas/editar"; // Vista para editar la cita
+        return "/citas/editar"; 
     }
 
     @PostMapping("/citas/editar")
