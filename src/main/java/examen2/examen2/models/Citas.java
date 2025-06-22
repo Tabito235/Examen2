@@ -49,9 +49,4 @@ public class Citas {
     public void setMotivo(String motivo) {
         this.motivo = motivo;
     }
-
-
-
-   
-    
 }

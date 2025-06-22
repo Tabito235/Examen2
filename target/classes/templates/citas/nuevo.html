@@ -4,7 +4,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <title>Formulario de Citas</title>
     <meta content="width=device-width, initial-scale=1.0, shrink-to-fit=no" name="viewport" />
-    
     <link rel="stylesheet" href="/assets/bootstrap.min.css" />
     <link rel="stylesheet" href="/assets/plugins.min.css" />
     <link rel="stylesheet" href="/assets/plugins.css" />
@@ -25,27 +24,22 @@
             </div>
             <div class="card-body">
               <form th:action="@{/citas/nuevo}" method="post">
-                
                 <div class="form-group">
                   <label for="idPaciente">Id del paciente</label>
                   <input type="number" class="form-control" id="idPaciente" name="idPaciente" placeholder="Ingrese el Id del paciente" required>
                 </div>
-
                 <div class="form-group">
                   <label for="fecha">Fecha y hora</label>
                   <input type="datetime-local" class="form-control" id="fecha" name="fecha" required>
                 </div>
-
                 <div class="form-group">
                   <label for="motivo">Motivo</label>
                   <input type="text" class="form-control" id="motivo" name="motivo" placeholder="Motivo de la cita" required>
                 </div>
-
                 <div class="form-group">
                   <button type="submit" class="btn btn-success">Guardar</button>
                   <a href="/citas" class="btn btn-danger">Cancelar</a>
                 </div>
-
               </form>
             </div>
           </div>
